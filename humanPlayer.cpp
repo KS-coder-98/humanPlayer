@@ -177,12 +177,8 @@ void sentMsg(Massge *msg, int msgId)
             stopFlag = false;
             break;
         }
-//        else
-//            continue;
         msg->mtype = getpid() * 2;
         msgsnd(msgId, msg, sizeof(Massge), 0);
-        lock.unlock();
-        sleep(1);
     }
 }
 
